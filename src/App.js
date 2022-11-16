@@ -1,9 +1,6 @@
 import logo from './logo.svg';
 import './App.css';
 import {React, useRef, useEffect, useState} from 'react'
-import "animate.css/animate.min.css";
-import { AnimationOnScroll } from 'react-animation-on-scroll';
-import {fadeInLeft, fadeOutRight} from 'react-animations';
 import {addScaleCorrector, motion, useScroll, useInView, delay} from 'framer-motion';
 import {IoIosMail, IoLogoLinkedin} from 'react-icons/io';
 import {BsGithub, BsFillTerminalFill} from 'react-icons/bs';
@@ -33,7 +30,7 @@ function ParsePic(props){
       .then(imageBlob => {
       // Then create a local URL for that image and print it 
       const imageObjectURL = URL.createObjectURL(imageBlob);
-      console.log(imageObjectURL);
+      
       setText(imageObjectURL)
   });
    }, []);
@@ -41,7 +38,7 @@ function ParsePic(props){
 }
 
 function Parse(props){
-  console.log(process.env.NODE_ENV)
+  
   //const baseUrl = process.env.NODE_ENV === 'development' ? "http://localhost:3000/" : "https://www.tomasperez.se/"
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true });
@@ -55,9 +52,9 @@ function Parse(props){
       }
     })
       .then(response => response.text())
-      .then(t => setText(t));
+      .then(t => setText(t)).catch(error => console.log(error)) 
    }, []);
-  console.log(text)
+  
   return<motion.p ref={ref} style={{
     transform: isInView ? "none" : "translateX(-200px)",
     opacity: isInView ? 1 : 0,
