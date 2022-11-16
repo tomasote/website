@@ -1,5 +1,17 @@
+:root{
+  --bgcolor: linear-gradient(var(--primaryColor), var(--gradcolor));
+  
+  --primaryColor: #101820FF;
+  --secondaryColor: #FEE715FF;
+  --gradcolor: #2c064e;
+}
+
+body{
+  overflow-x: hidden;
+}
 .App {
   text-align: center;
+  background: var(--bgcolor);
 }
 
 .App-logo {
@@ -7,15 +19,24 @@
   pointer-events: none;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+#hello {
+  margin-top: 300px;
+  margin-bottom: 50px;
+  color: var(--secondaryColor);
+  
+}
+
+.h2{
+  color: var(--secondaryColor);
+  --margin: 150px; 
+  margin-bottom: calc(var(--margin)-100px);
+  margin-top: calc(var(--margin)-20px);
 }
 
 .App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+  background-color: transparent;
+  /*min-height: 100vh;*/
+  min-width: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -28,11 +49,159 @@
   color: #61dafb;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.links{
+  background-color: var(--secondaryColor);
+  height: 100px;
+  padding: 0%;
+  border-radius: 0px 0px 30px 30px;
+  width: 100%;
+  margin: 0%;
+  position: fixed;
+  z-index: 999;
+  
+}
+.linksBack{
+  background-color: var(--primaryColor);
+  z-index: 999;
+}
+.nav{
+  display: inline-flex;
+  flex-direction: row;
+  padding: 0 0 0 0px;
+  justify-content: center;
+  list-style-type: none;
+  max-width: 100%;
+  margin-right: auto;
+  margin-left: auto;
+  z-index: 999;
+  
+}
+
+.linkItem{
+  --spacing: 150px;
+  scale: 2.3;
+  margin: 0;
+  padding: 0;
+  margin-top: 25px;
+  margin-left: var(--spacing);
+  margin-right: var(--spacing);
+}
+a, a:visited, a:hover, a:active {
+  color: inherit;
+  display: inline;
+}
+.welcome{
+  --space-side: 500px;
+  margin-left: var(--space-side);
+  margin-right: var(--space-side);
+  text-align: left;
+}
+/* width */
+::-webkit-scrollbar {
+  width: 15px;
+  border-radius: 50px 50px 50px 50px;
+  transition: background 5s, width 250ms;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: var(--primaryColor);
+  
+}
+
+*:hover::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+  transition: background 5s;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #555;
+  border-radius: 5px 0px 0px 5px;
+  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #888;
+  width: 15px;
+  transition: background 5s;
+}
+.box {
+  padding: 1rem;
+  max-height: 220px;
+  overflow-y: visible;
+}
+
+.liText{
+  z-index: 99;
+}
+
+.form{
+  --spacing: 350px;
+  display: inline-flex;
+  scale: 1;
+  position: relative;
+  justify-content: center;
+  align-items: flex-end;
+  margin-top: 25px;
+  margin-bottom: 100px;
+  margin-left: var(--spacing);
+  margin-right: var(--spacing);
+  z-index: 99;
+}
+.test{
+  --spacing: 150px;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 20%;
+  border:rgba(255, 255, 255, 1) 3px solid;
+  width: 25px;
+  height: 25px;
+  appearance: none;
+  outline: none;
+  position: relative;
+  background: #000000;
+  margin-left: var(--spacing);
+  margin-right: var(--spacing);
+  transition: background-color 250ms;
+
+
+}
+
+.test:checked{
+  background: #FFFFFF;
+  scale: 1.2;
+}
+
+.testsson{
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.knapp{
+  width: 200px;
+  height: 100px;
+  background: transparent;
+  border-radius: 50px;
+  border: #FFFFFF 5px solid;
+  color: #FFFFFF;
+  font-weight: 100;
+  font-size:xx-large;
+  position: relative;
+  z-index: 2;
+  transition: background 250ms, color 250ms;
+  
+}
+.knapp:hover{
+  background: #FFFFFF;
+  color: #000000;
+}
+
+img{
+  height: 700px;
+  width: 100%;
 }
