@@ -33,6 +33,7 @@ function ParsePic(props){
       
       setText(imageObjectURL)
   });
+  // eslint-disable-next-line react-hooks/exhaustive-deps
    }, []);
   return<img src = {text}></img>;
 }
@@ -42,7 +43,7 @@ function Parse(props){
   //const baseUrl = process.env.NODE_ENV === 'development' ? "http://localhost:3000/" : "https://www.tomasperez.se/"
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true });
-  const [text, setText] = useState("p");
+  const [text, setText] = useState("");
   useEffect(()=>{
     const baseUrl = process.env.NODE_ENV === 'development' ? "http://localhost:3000/" : "https://www.tomasperez.se/"
     fetch(baseUrl+props.file, {
@@ -51,15 +52,18 @@ function Parse(props){
         'Access-Control-Allow-Origin': '*'
       }
     })
-      .then(response => response.text())
-      .then(t => setText(t)).catch(error => console.log(error)) 
+      .then(response => {
+        return response.text();
+      }
+      )
+      .then(t => {console.log(t); setText(t)}).catch(error => console.log(error))
+      // eslint-disable-next-line react-hooks/exhaustive-deps
    }, []);
   
   return<motion.p ref={ref} style={{
     transform: isInView ? "none" : "translateX(-200px)",
     opacity: isInView ? 1 : 0,
     transition: "all 0.9s cubic-bezier(0.17, 0.55, 0.55, 1) 0.5s"
-
   }} className='welcome'>{text}</motion.p>;
 }
 
@@ -151,7 +155,7 @@ function App() {
           scale: 0
         }} className = "header1" id='hello'>Welcome!</motion.h1>
         
-        <Parse className = "welcome" file = "welcome.txt"/>
+        <Parse className="welcome" file="welcome.txt"/>
         
       </div>
       <div className='App-header'>
