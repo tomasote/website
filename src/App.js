@@ -53,11 +53,10 @@ function Parse(props){
       }
     })
       .then(response => {
-        console.log(response)
         return response.text();
       }
       )
-      .then(t => {console.error(t ? t : "no text loaded"); setText(t)}).catch(error => console.error(error))
+      .then(t => setText(t)).catch(error => console.error(error))
       // eslint-disable-next-line react-hooks/exhaustive-deps
    }, []);
   
