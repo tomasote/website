@@ -24,7 +24,12 @@ function ParsePic(props){
   const baseUrl = process.env.NODE_ENV === 'development' ? "http://localhost:3000/" : "https://www.tomasperez.se/"
   const [text, setText] = useState(null);
   useEffect(()=>{
-    fetch(baseUrl+props.file)
+    fetch(baseUrl+props.file, {
+      mode: 'same-origin',
+      headers: {
+        'Access-Control-Allow-Origin': '*'
+      }
+    })
   //                         vvvv
       .then(response => response.blob())
       .then(imageBlob => {
