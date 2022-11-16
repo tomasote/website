@@ -47,7 +47,6 @@ function Parse(props){
   useEffect(()=>{
     const baseUrl = process.env.NODE_ENV === 'development' ? "http://localhost:3000/" : "https://www.tomasperez.se/"
     fetch(baseUrl+props.file, {
-      mode: "no-cors",
       headers: {
         'Access-Control-Allow-Origin': '*'
       }
