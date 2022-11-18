@@ -4,6 +4,7 @@ import {React, useRef, useEffect, useState} from 'react'
 import {addScaleCorrector, motion, useScroll, useInView, delay} from 'framer-motion';
 import {IoIosMail, IoLogoLinkedin} from 'react-icons/io';
 import {BsGithub, BsFillTerminalFill} from 'react-icons/bs';
+import { Helmet } from 'react-helmet';
 
 
 
@@ -72,6 +73,13 @@ function Parse(props){
   }} className='welcome'>{text ? text : "TEXT LOADING ERROR"}</motion.p>;
 }
 
+function Linked(){
+  return(
+    <div class="badge-base LI-profile-badge" data-locale="sv_SE" data-size="medium" data-theme="dark" data-type="VERTICAL" data-vanity="tomasjperez" data-version="v1"><a class="badge-base__link LI-simple-link" href="https://se.linkedin.com/in/tomasjperez?trk=profile-badge">Tomas Pérez</a></div>
+
+  )
+}
+
 function Test(props){
   return <motion.div className='testsson' >
     <label for={props.id}>{props.name}</label>
@@ -111,6 +119,9 @@ function App() {
   }
   return (
     <div className="App">
+      <Helmet>
+        <script src="https://platform.linkedin.com/badges/js/profile.js" async defer type="text/javascript"></script>
+      </Helmet>
       <div className='linksBack'>
         <div className='links'>
           <ul className='nav'>
@@ -189,6 +200,7 @@ function App() {
         <Header2 className="h2" name="Contact"></Header2>
         <Parse className = "welcome" file = "contact.txt"/>
       </div>
+      {/* <Linked /> */}
     </div>
   );
 }
