@@ -4,7 +4,7 @@ import {React, useRef, useEffect, useState} from 'react'
 import {addScaleCorrector, motion, useScroll, useInView, delay} from 'framer-motion';
 import {IoIosMail, IoLogoLinkedin} from 'react-icons/io';
 import {BsGithub, BsFillTerminalFill} from 'react-icons/bs';
-import { Helmet } from 'react-helmet';
+//import { Helmet } from 'react-helmet';
 import  { Navigate } from 'react-router-dom'
 
 
@@ -124,9 +124,6 @@ function App() {
   }
   return (
     <div className="App">
-      <Helmet>
-        <script src="https://platform.linkedin.com/badges/js/profile.js" async defer type="text/javascript"></script>
-      </Helmet>
       <div className='linksBack'>
         <div className='links'>
           <ul className='nav'>
