@@ -5,6 +5,7 @@ import {addScaleCorrector, motion, useScroll, useInView, delay} from 'framer-mot
 import {IoIosMail, IoLogoLinkedin} from 'react-icons/io';
 import {BsGithub, BsFillTerminalFill} from 'react-icons/bs';
 import { Helmet } from 'react-helmet';
+import  { Navigate } from 'react-router-dom'
 
 
 
@@ -54,6 +55,7 @@ function Parse(props){
     const baseUrl = process.env.NODE_ENV === 'development' ? "http://localhost:3000/" : "https://www.tomasperez.se/"
     fetch(baseUrl+props.file, {
       mode: 'same-origin',
+      credentials: 'omit',
       headers: {
         'Access-Control-Allow-Origin': '*'
       }
@@ -95,6 +97,10 @@ function timer(ms){
 
 function App() {
   const [answered, setAnswered] = useState(false)
+  console.log(window.location.href)
+  if (window.location.href === "https://tomasperez.se/"){
+    window.location.replace("https://www.tomasperez.se/");
+  }
   async function checker(e){
     e.preventDefault()
     const length = e.target.childElementCount - 1
