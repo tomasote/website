@@ -95,9 +95,9 @@ function timer(ms){
 
 function App() {
   const [answered, setAnswered] = useState(false)
-  if (window.location.href === "https://tomasperez.se/"){
+  {/*if (window.location.href === "https://tomasperez.se/"){
     window.location.replace("https://www.tomasperez.se/");
-  }
+  }*/}
   async function checker(e){
     e.preventDefault()
     const length = e.target.childElementCount - 1
@@ -122,9 +122,6 @@ function App() {
   }
   return (
     <div className="App">
-      <Helmet>
-        <script src="https://platform.linkedin.com/badges/js/profile.js" async defer type="text/javascript"></script>
-      </Helmet>
       <div className='linksBack'>
         <div className='links'>
           <ul className='nav'>
