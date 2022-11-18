@@ -6,9 +6,6 @@ import {IoIosMail, IoLogoLinkedin} from 'react-icons/io';
 import {BsGithub, BsFillTerminalFill} from 'react-icons/bs';
 
 
-
-
-
 function Header2(props){
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true });
