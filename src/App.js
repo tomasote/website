@@ -23,7 +23,7 @@ function Header2(props){
 }
 
 function ParsePic(props){
-  const baseUrl = process.env.NODE_ENV === 'development' ? "http://localhost:3000/" : "https://www.tomasperez.se/"
+  const baseUrl = document.URL //process.env.NODE_ENV === 'development' ? "http://localhost:3000/" : "https://www.tomasperez.se/"
   const [text, setText] = useState(null);
   useEffect(()=>{
     fetch(baseUrl+props.file, {
@@ -52,7 +52,7 @@ function Parse(props){
   const isInView = useInView(ref, { once: true });
   const [text, setText] = useState("");
   useEffect(()=>{
-    const baseUrl = process.env.NODE_ENV === 'development' ? "http://localhost:3000/" : "https://www.tomasperez.se/"
+    const baseUrl = document.URL //process.env.NODE_ENV === 'development' ? "http://localhost:3000/" : "https://www.tomasperez.se/"
     fetch(baseUrl+props.file, {
       mode: 'same-origin',
       credentials: 'omit',
