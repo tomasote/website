@@ -97,7 +97,6 @@ function timer(ms){
 
 function App() {
   const [answered, setAnswered] = useState(false)
-  console.log(window.location.href)
   if (window.location.href === "https://tomasperez.se/"){
     window.location.replace("https://www.tomasperez.se/");
   }
